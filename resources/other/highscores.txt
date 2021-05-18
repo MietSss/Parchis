@@ -1,0 +1,8 @@
+HIGHSCORES TOP 5:
+Naam       	 Aantal Beurten
+---------- 	 --------------
+EPMV       	 20 
+Ellen      	 20 
+Miet       	 20 
+EllenP     	 21 
+Els        	 25 

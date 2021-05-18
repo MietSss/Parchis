@@ -1,0 +1,68 @@
+
+Parchís is een bordspel dat met dobbelstenen en pionnen wordt gespeeld. Het wordt met 4
+personen gespeeld. Elke speler kiest in het begin van het spel een kleur van pionnen (geel,
+blauw, rood of groen). Hieronder een illustratie die toont hoe het speelbord eruit ziet.
+
+
+Elke speler heeft 1 dobbelsteen en 4 pionnen. Deze 4 pionnen staan bij het begin van het spel
+in het overeenkomstige ronde veld dat dezelfde kleur heeft als de pion. Dit ronde veld noemt
+men ook wel eens het “nest”. Het doel van het spel is:
+    1. om de pionnen uit het nest te halen (bijvoorbeeld: de gele speler haalt een pion uit het
+    gele nest en verplaatst deze naar veld 5)
+    2. de pionnen het volledige speelbord te laten rondgaan (tegen de klok)
+    3. om uiteindelijk in de gekleurde “landingsbaan” te komen (bijvoorbeeld de gele velden)
+    4. om zo snel mogelijk in het centrum van het spelbord te belanden.
+
+Elke speler gooit om de beurt zijn/haar dobbelsteen. Diegene die in het begin de hoogste
+waarde gooit mag beginnen. Afhankelijk van de waarden die de speler gooit, kunnen er
+verschillende gebeurtenissen plaatsvinden tijdens het “racen” rondom het speelveld:
+    • Als een speler 5 gooit moet die speler een pion uit zijn/haar nest vrijlaten (als er nog
+    pionnen in het nest zitten). De pion komt dan terecht op het gekleurde vakje vlak naast
+    het nest. Als er op dat moment reeds een anderskleurige pion op datzelfde vakje staat,
+    dan moet die anderskleurige pion terug naar zijn nest.
+
+    • Als een speler 6 gooit mag de speler onmiddellijk een tweede beurt spelen. Dit mag
+    maximaal 3 keer na elkaar voorkomen.
+
+    • Wanneer een speler 4 pionnen op het speelveld heeft staan (niet in het nest) en die
+    speler goot een 6, dan mag die speler een pion 7 vakjes laten opschuiven
+
+    • Wanneer er 3 keer 6 na elkaar gegooid wordt, moet de laatste pion die bewogen werd
+    terug naar zijn nest. Tenzij die pion zich reeds op de gekleurde “landingsbaan” bevond.
+    In dat geval moet die pion gewoon verplaatst worden naar het begin van de
+    “landingsbaan”
+
+    • Meerdere pionnen van dezelfde kleur kunnen zich op hetzelfde vakje bevinden.
+
+    • Wanneer een pion op een vakje terecht komt waar er reeds een pion stond, dan moet
+    die pion die er reeds stond terug naar zijn nest. De pion die landde op dat vakje mag
+    dan 20 vakjes vooruit (als dat mogelijk is).
+
+    • Wanneer een pion in het centrum is geraakt, mag een vrij gekozen pion van dezelfde
+    kleur 10 vakjes vooruit gezet worden (als dat mogelijk is)
+
+    • Wanneer een speler met de dobbelsteen gooit en er is geen pion die met het aantal
+    gegooide ogen op een zinnige plaats kan landen, dan wordt de beurt doorgegeven aan
+    de volgende speler.
+
+    • De vakjes op de illustratie waar een cirkel opstaat zijn “safe spaces”. Als je pion daarop
+    staat, kan die niet “opgegeten” (=teruggestuurd naar het nest) worden door een
+    anderskleurige pion die daar toekomt. Wanneer er twee pionnen van dezelfde kleur op
+    zo’n “safe space” staan, dan vormen die een “barrière”: er kan geen enkele andere pion
+    meer landen op dat vak van dezelfde kleur. Er kunnen dan ook geen pionnen van
+    eender welke kleur meer passeren voorbij dat vak. Als een speler een 6 gooit, dan moet
+    die speler verplicht één van zijn/haar barrières verbreken door één pion uit het
+    barrièrevak te verplaatsen.
+
+    • Wanneer een pion heel het bord is rondgegaan en op de “landingsbaan” staat, kan die
+    pion enkel uitspelen door het exacte aantal ogen te werpen waarmee de pion in het
+    middenveld beland. De eerste speler die alle 4 pionnen in het middenveld heeft
+    gekregen wint.
+
+Wanneer het spel werd gewonnen, heeft de winnende speler de kans om zijn/haar naam in te
+vullen in de topscorelijst. De score wordt bepaald door het aantal beurten dat de speler nodig
+had om al zijn/haar pionnen in het middenveld te krijgen.
+
+
+
+
