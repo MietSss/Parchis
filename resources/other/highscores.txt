@@ -5,4 +5,4 @@ EPMV       	 20
 Ellen      	 20 
 Miet       	 20 
 MietSM     	 20 
-EllenP     	 21 
+ikke       	 20 

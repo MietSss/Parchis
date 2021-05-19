@@ -223,7 +223,7 @@ public class GameBoard extends GridPane {
 
             this.setPadding(new Insets(10));
 
-            this.setGridLinesVisible(true);
+         //   this.setGridLinesVisible(true);
 
         }
 
@@ -481,14 +481,17 @@ public class GameBoard extends GridPane {
                                         pionBlauwImage.setFitWidth(vakBreedte / 3);
                                         String nummerPion = String.valueOf(nummer);
                                         pionBlauw = new Button(nummerPion, pionBlauwImage);
+                                        pionBlauw.setDisable(false);
                                         pionBlauw.setContentDisplay(ContentDisplay.BOTTOM);
                                         pionBlauw.setFont(Font.font(9));
                                         pionBlauw.setDisable(true);
+
                                         int xb = vakkenNestBlauw.get(i).getX();
                                         int yb = vakkenNestBlauw.get(i).getY();
                                      //   HBox hboxb = (HBox) getHBox(xb, yb);
                                      //   hboxb.getChildren().add(pionBlauw);
                                      //   hboxb.setAlignment(Pos.CENTER);
+                                        this.add(pionBlauw,xb,yb);
                                         pionnenBlauw.add(pionBlauw);
                                         GridPane.setHalignment(pionBlauw,HPos.CENTER);
                                     } catch (MalformedURLException e) {
