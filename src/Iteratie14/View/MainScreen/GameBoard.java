@@ -8,10 +8,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -74,6 +71,7 @@ public class GameBoard extends GridPane {
     private ImageView gegooideWaardeSpelerGe;
     private ImageView gegooideWaardeSpelerRo;
     private ImageView gegooideWaardeSpelerGr;
+    private Label aantalBeurtenRood, aantalBeurtenGeel, aantalBeurtenGroen, aantalBeurtenBlauw;
 
 
 
@@ -114,6 +112,12 @@ public class GameBoard extends GridPane {
             gegooideWaardeSpelerGe = new ImageView();
             gegooideWaardeSpelerRo = new ImageView();
             gegooideWaardeSpelerGr = new ImageView();
+
+            aantalBeurtenBlauw = new Label();
+            aantalBeurtenGeel = new Label();
+            aantalBeurtenGroen = new Label();
+            aantalBeurtenRood = new Label();
+
 
 
             //teken speelbord
@@ -212,12 +216,14 @@ public class GameBoard extends GridPane {
             this.add(nestRood, 2, 13, 6, 18);
             this.add(nestGroen, 15, 13, 19, 18);
 
+
+
+
             plaatsPionnen(kleurenSpelers);
 
             this.setPadding(new Insets(10));
 
-
-            //    this.setGridLinesVisible(true);
+            this.setGridLinesVisible(true);
 
         }
 
@@ -506,37 +512,66 @@ public class GameBoard extends GridPane {
                 naamSpeler.setFont(Font.font(16));
                 //  naamSpeler.setWrapText(true);
                 // naamSpeler.setMaxWidth(vakBreedte * 4);
-                naamSpeler.setMaxHeight(vakHoogte);
+                naamSpeler.setPrefHeight(vakHoogte);
+                naamSpeler.setPrefWidth(vakHoogte*4);
                 naamSpeler.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,
                         CornerRadii.EMPTY, new BorderWidths(3))));
                 Kleur kleurSpeler = kleurenSpelers.get(i);
                 switch (kleurSpeler) {
                     case BLAUW:
-                        this.add(naamSpeler, 3, 5, 9, 5);
+                        this.add(naamSpeler, 7, 7, 2,1);
                         labelsNaamSpeler.put(Kleur.BLAUW, naamSpeler);
-                        this.add(gegooideWaardeSpelerBl, 10, 5, 12, 5);
+                        this.add(gegooideWaardeSpelerBl, 1, 7);
+                        this.add(aantalBeurtenBlauw, 7,6 );
                         break;
                     case GEEL:
-                        this.add(naamSpeler, 14, 5, 18, 5);
+                        this.add(naamSpeler, 13, 7, 2, 1);
                         labelsNaamSpeler.put(Kleur.GEEL, naamSpeler);
-                        this.add(gegooideWaardeSpelerGe, 19, 5, 20, 5);
+                        this.add(gegooideWaardeSpelerGe, 19,7);
+                        this.add(aantalBeurtenGeel, 13,6);
                         break;
                     case ROOD:
-                        this.add(naamSpeler, 3, 9, 9, 9);
+                        this.add(naamSpeler, 7, 13, 2, 1);
                         labelsNaamSpeler.put(Kleur.ROOD, naamSpeler);
-                        this.add(gegooideWaardeSpelerRo, 10, 9, 12, 9);
+                        this.add(gegooideWaardeSpelerRo, 1, 13);
+                        this.add(aantalBeurtenRood, 7,14);
                         break;
                     case GROEN:
-                        this.add(naamSpeler, 14, 9, 18, 9);
+                        this.add(naamSpeler, 13, 13, 2 ,1);
                         labelsNaamSpeler.put(Kleur.GROEN, naamSpeler);
-                        this.add(gegooideWaardeSpelerGr, 19, 9, 20, 9);
+                        this.add(gegooideWaardeSpelerGr, 19,13);
+                        this.add(aantalBeurtenGroen,13,14 );
                         break;
                 }
             }
         }
 
 
-// implementatie van de nodige
+    public List<Kleur> getKleurenSpelers() {
+        return kleurenSpelers;
+    }
+
+    public List<String> getNamenSpelers() {
+        return namenSpelers;
+    }
+
+    public Label getAantalBeurtenRood() {
+        return aantalBeurtenRood;
+    }
+
+    public Label getAantalBeurtenGeel() {
+        return aantalBeurtenGeel;
+    }
+
+    public Label getAantalBeurtenGroen() {
+        return aantalBeurtenGroen;
+    }
+
+    public Label getAantalBeurtenBlauw() {
+        return aantalBeurtenBlauw;
+    }
+
+    // implementatie van de nodige
 // package-private Getters
     }
 

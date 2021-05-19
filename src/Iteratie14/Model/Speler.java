@@ -27,6 +27,7 @@ public class Speler {
         this.naam = naam;
         pionnen = new ArrayList<>();
         this.speelbord = speelbord;
+        this.aantalBeurten = 1;
         for (int j = 0; j < MAX_PIONNEN_PER_SPELER; j++) {
             pionnen.add(new Pion(kleur, j + 1, speelbord.getNest(kleur).get(j)));
         }

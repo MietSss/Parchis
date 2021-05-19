@@ -49,6 +49,7 @@ public class MainScreenPresenter {
         animatie = new AnimatieDobbelsteen(model, view);
         updateInstructies();
         EventHandlers();
+        updateAantalBeurten();
         animatie.animateSpelerAanZet();
     }
 
@@ -93,8 +94,41 @@ public class MainScreenPresenter {
             model.kiesVolgendeSpeler();
             //zet werp button terug aan.
             view.getWerp().setDisable(false);
+            updateAantalBeurten();
             updateInstructies();
             animatie.animateSpelerAanZet();
+        }
+    }
+
+    private void updateAantalBeurten(){
+        try {
+            String aantalBeurtenBl = String.valueOf(model.getSpelers().getSpeler(Kleur.BLAUW).getAantalBeurten());
+            view.getGameBoardView().getAantalBeurtenBlauw().setText("Aantal beurten: " + aantalBeurtenBl);
+        }
+        catch (NullPointerException ne){
+            // geen actie nodig
+        }
+
+        try {
+            String aantalBeurtenRo = String.valueOf(model.getSpelers().getSpeler(Kleur.ROOD).getAantalBeurten());
+            view.getGameBoardView().getAantalBeurtenRood().setText("Aantal beurten: " + aantalBeurtenRo);
+        }
+        catch (NullPointerException ne){
+            // geen actie nodig
+        }
+        try {
+            String aantalBeurtenGr = String.valueOf(model.getSpelers().getSpeler(Kleur.GROEN).getAantalBeurten());
+            view.getGameBoardView().getAantalBeurtenGroen().setText("Aantal beurten: " + aantalBeurtenGr);
+        }
+        catch (NullPointerException ne){
+            // geen actie nodig
+        }
+        try {
+            String aantalBeurtenGe = String.valueOf(model.getSpelers().getSpeler(Kleur.GEEL).getAantalBeurten());
+            view.getGameBoardView().getAantalBeurtenGeel().setText("Aantal beurten: " + aantalBeurtenGe);
+        }
+        catch (NullPointerException ne){
+            // geen actie nodig
         }
     }
 
