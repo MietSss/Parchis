@@ -21,19 +21,17 @@ public class StartScreenPresenter {
         this.model = model;
         this.view = view;
         this.uiSettings = uiSettings;
-        updateView();
-        EventHandlers();
+        this.updateView();
+        this.addEventHandlers();
     }
 
     private void updateView() {
     }
 
-    private void EventHandlers() {
+    private void addEventHandlers() {
         view.getTransition().setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //MainScreenView epView = new MainScreenView(uiSettings);
-                //MainScreenPresenter msPresenter = new MainScreenPresenter(model, epView, uiSettings);
                 EnterPlayersView epView= new EnterPlayersView(uiSettings);
                 EnterPlayersPresenter epPresenter=new EnterPlayersPresenter(model, epView, uiSettings);
                 view.getScene().setRoot(epView);

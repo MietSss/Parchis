@@ -5,7 +5,6 @@ import Iteratie14.Model.*;
 import Iteratie14.View.MainScreen.MainScreenPresenter;
 import Iteratie14.View.MainScreen.MainScreenView;
 import Iteratie14.View.UISettings;
-import iteratie12.model.Parchis;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,11 +37,13 @@ public class EnterPlayersPresenter {
         this.uiSettings = uiSettings;
         gekozenKleuren = new LinkedHashMap<>();
         gekozenNamen = new LinkedHashMap<>();
-        eventHandlers();
+        this.addEventHandlers();
+        this.updateView();
+        this.addWindowEventHandlers();
 
     }
 
-    private void eventHandlers() {
+    private void addEventHandlers() {
         view.getConfirm().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -158,7 +159,7 @@ public class EnterPlayersPresenter {
                 } catch (ParchisException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error gekozen naam");
-                    alert.setContentText(e.getMessage() +" en misschien nog meerdere namen");
+                    alert.setContentText(e.getMessage() + " en misschien nog meerdere namen");
                     alert.showAndWait();
                 }
                 if (gekozenKleuren.size() != aantalSpelers) {
@@ -180,7 +181,7 @@ public class EnterPlayersPresenter {
                     mView.getScene().getWindow().setY(uiSettings.getResY() / 20);
                     mView.getScene().getWindow().setHeight(9 * uiSettings.getResY() / 10);
                     mView.getScene().getWindow().setWidth(9 * uiSettings.getResX() / 10);
-                    mPresenter.windowsHandler();
+                    mPresenter.addWindowEventHandlers();
                 } catch (MalformedURLException | NullPointerException e) {
                     e.printStackTrace();
                 }
@@ -197,23 +198,6 @@ public class EnterPlayersPresenter {
         });
     }
 
-
-    private void handleCloseEvent(Event event) {
-        final Alert stopWindow = new Alert(Alert.AlertType.CONFIRMATION);
-        stopWindow.setHeaderText("You're closing the application.");
-        stopWindow.setContentText("Are you sure? Unsaved data may be lost.");
-        stopWindow.setTitle("WARNING!");
-        stopWindow.getButtonTypes().clear();
-        ButtonType noButton = new ButtonType("No");
-        ButtonType yesButton = new ButtonType("Yes");
-        stopWindow.getButtonTypes().addAll(yesButton, noButton);
-        stopWindow.showAndWait();
-        if (stopWindow.getResult() == null || stopWindow.getResult().equals(noButton)) {
-            event.consume();
-        } else {
-            view.getScene().getWindow().hide();
-        }
-    }
 
     private void updateView() {
         model.getSpelers().setAantalSpelers(aantalSpelers);
@@ -240,6 +224,29 @@ public class EnterPlayersPresenter {
 
     }
 
+    private void addWindowEventHandlers(){
+
+    }
+
+
+    private void handleCloseEvent(Event event) {
+        final Alert stopWindow = new Alert(Alert.AlertType.CONFIRMATION);
+        stopWindow.setHeaderText("You're closing the application.");
+        stopWindow.setContentText("Are you sure? Unsaved data may be lost.");
+        stopWindow.setTitle("WARNING!");
+        stopWindow.getButtonTypes().clear();
+        ButtonType noButton = new ButtonType("No");
+        ButtonType yesButton = new ButtonType("Yes");
+        stopWindow.getButtonTypes().addAll(yesButton, noButton);
+        stopWindow.showAndWait();
+        if (stopWindow.getResult() == null || stopWindow.getResult().equals(noButton)) {
+            event.consume();
+        } else {
+            view.getScene().getWindow().hide();
+        }
+    }
+
+
     public List<String> getBeschikbareKleuren() {
         List<String> beschikbareKleuren = new ArrayList<>();
         for (Kleur kleur : model.getKleuren()) {
@@ -259,8 +266,6 @@ public class EnterPlayersPresenter {
         }
         return true;
     }
-
-
 }
 
 

@@ -45,13 +45,28 @@ public class MainScreenPresenter {
         this.model = model;
         this.view = view;
         this.uiSettings = uiSettings;
-        gameBoard = view.getGameBoardView();
-        animatie = new AnimatieDobbelsteen(model, view);
+      gameBoard = view.getGameBoardView();
+      animatie = new AnimatieDobbelsteen(model, view);
+        updateView();
+        addEventHandlers();
         updateInstructies();
         EventHandlers();
         updateAantalBeurten();
         animatie.animateSpelerAanZet();
     }
+
+
+// presenter proberen in te delen volgens addEventHandles en updateview;
+    private void addEventHandlers(){
+        //koppelt event handlers (anon. inner klassen) aan de controls uit de view
+        //event handlers: roepen methodes aan uit het model en zorgen voor een update van de view
+    }
+
+    private void updateView(){
+//vult de view met data uit model
+    }
+
+
 
     private void updateInstructies() {
         //instructies updaten
@@ -319,8 +334,12 @@ public class MainScreenPresenter {
                                 // do nothing, if toURL-conversion fails, program can continue
                             }
                         }
+                        view.getScene().getWindow().hide();
                         endOfGameStage.showAndWait();
-                    }
+
+
+
+                        }
 
                 });
 
@@ -406,7 +425,6 @@ public class MainScreenPresenter {
             }
         });
         view.getLoadItem().
-
                 setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -437,7 +455,6 @@ public class MainScreenPresenter {
                     }
                 });
         view.getSaveItem().
-
                 setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -472,7 +489,6 @@ public class MainScreenPresenter {
                     }
                 });
         view.getExitItem().
-
                 setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -480,7 +496,6 @@ public class MainScreenPresenter {
                     }
                 });
         view.getAboutItem().
-
                 setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -516,7 +531,6 @@ public class MainScreenPresenter {
                     }
                 });
         view.getInfoItem().
-
                 setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -554,7 +568,7 @@ public class MainScreenPresenter {
 
     }
 
-    public void windowsHandler() {
+    public void addWindowEventHandlers() {
         view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {

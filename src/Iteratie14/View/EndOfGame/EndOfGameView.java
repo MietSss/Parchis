@@ -18,7 +18,8 @@ import java.nio.file.Files;
 public class EndOfGameView extends BorderPane {
     private UISettings uiSettings;
     private Button voegToe;
-  //  private Button btnOK;
+  // private Button btnOK;
+    private Button nieuwSpel;
     private ImageView confettiIV;
     private Label proficiat;
     private TextArea instructie;
@@ -41,6 +42,7 @@ public class EndOfGameView extends BorderPane {
      //   btnOK = new Button("OK");
         voegToe = new Button("voeg toe aan highscore");
         naam = new TextField();
+        nieuwSpel = new Button("Start nieuw spel");
         BackgroundSize bsize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
 
          if (Files.exists(uiSettings.getConfettiPath())) {
@@ -75,12 +77,16 @@ public class EndOfGameView extends BorderPane {
         proficiat.setAlignment(Pos.CENTER);
         instructie.setFont(Font.font("Verdana", 18));
        // instructie.setAlignment(Pos.CENTER);
-        instructie.setMaxHeight(Double.MAX_VALUE);
-        instructie.setMaxWidth(Double.MAX_VALUE);
+        instructie.setMaxHeight(300);
+        instructie.setMaxWidth(400);
         instructie.setWrapText(true);
         instructie.setEditable(false);
         naam.setPromptText("Geef een naam op");
+        naam.setMaxHeight(100);
+        naam.setMaxWidth(200);
         voegToe.setMaxSize(200,200);
+        voegToe.setDisable(false);
+        nieuwSpel.setMaxSize(200,200);
        // voegToe.setPrefWidth(WIDTH/2);
       //  btnOK.setMaxSize(60, 60);
         this.setTop(proficiat);
@@ -91,11 +97,12 @@ public class EndOfGameView extends BorderPane {
         VBox.setVgrow(instructie, Priority.ALWAYS);
         VBox.setVgrow(naam, Priority.ALWAYS);
         VBox.setVgrow(voegToe, Priority.ALWAYS);
+        VBox.setVgrow(nieuwSpel,Priority.ALWAYS);
 
         this.setBackground(backgroundConfetti);
 
         //VBox.setVgrow(confettiIV,Priority.ALWAYS);
-        vBox2.getChildren().addAll(instructie, naam, voegToe);
+        vBox2.getChildren().addAll(instructie, naam, voegToe, nieuwSpel);
         vBox2.setAlignment(Pos.CENTER);
        // vBox1.setSpacing(uiSettings.getInsetsMargin());
          vBox2.setSpacing(uiSettings.getInsetsMargin());
@@ -116,6 +123,7 @@ public class EndOfGameView extends BorderPane {
         BorderPane.setMargin(instructie, new Insets(uiSettings.getInsetsMargin()));
         BorderPane.setMargin(naam, new Insets(uiSettings.getInsetsMargin()));
         BorderPane.setMargin(voegToe, new Insets(uiSettings.getInsetsMargin()));
+        BorderPane.setMargin(nieuwSpel, new Insets(uiSettings.getInsetsMargin()));
     //    BorderPane.setMargin(btnOK, new Insets(uiSettings.getInsetsMargin()));
 
 
@@ -134,5 +142,9 @@ public class EndOfGameView extends BorderPane {
 
     public TextField getNaam() {
         return naam;
+    }
+
+    public Button getNieuwSpel() {
+        return nieuwSpel;
     }
 }
