@@ -58,18 +58,6 @@ public class EndOfGamePresenter {
                 epView.getScene().getWindow().setY(uiSettings.getResY() / 20);
                 epView.getScene().getWindow().setHeight(9 * uiSettings.getResY() / 10);
                 epView.getScene().getWindow().setWidth(9 * uiSettings.getResX() / 10);
-                UISettings uiSettings = new UISettings();
-                ParchisModel model = new ParchisModel();
-                StartScreenView view = new StartScreenView(uiSettings);
-                StartScreenPresenter presenter = new StartScreenPresenter(model, view, uiSettings);
-                Scene scene = new Scene(view);
-                if (uiSettings.styleSheetAvailable()){
-                    try {
-                        scene.getStylesheets().add(uiSettings.getStyleSheetPath().toUri().toURL().toString());
-                    } catch (MalformedURLException ex) {
-                        // do nothing, if toURL-conversion fails, program can continue
-                    }
-                }
 
             }
         });

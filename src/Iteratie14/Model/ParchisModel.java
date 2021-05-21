@@ -623,6 +623,8 @@ public class ParchisModel {
 
     }
 
+
+
     public boolean isEindeSpel() {
         if (spelerAanZet.isWinnaar()) {
             return eindeSpel = true;
