@@ -2,7 +2,6 @@ package Iteratie14;
 
 import Iteratie14.View.StartScreen.*;
 import Iteratie14.Model.*;
-import Iteratie14.View.*;
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.image.Image;

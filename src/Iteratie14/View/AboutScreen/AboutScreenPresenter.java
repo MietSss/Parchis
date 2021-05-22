@@ -1,7 +1,7 @@
 package Iteratie14.View.AboutScreen;
 
 import Iteratie14.Model.*;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

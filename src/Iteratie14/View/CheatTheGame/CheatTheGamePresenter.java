@@ -1,8 +1,7 @@
 package Iteratie14.View.CheatTheGame;
 
 import Iteratie14.Model.ParchisModel;
-import Iteratie14.View.HighscoresScreen.HighScoreView;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 
 public class CheatTheGamePresenter {
     private ParchisModel model;

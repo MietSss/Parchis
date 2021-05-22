@@ -1,11 +1,9 @@
 package Iteratie14.View.StartScreen;
 
 import Iteratie14.Model.*;
-import Iteratie14.View.*;
+import Iteratie14.UISettings;
 import Iteratie14.View.EnterPlayersScreen.EnterPlayersPresenter;
 import Iteratie14.View.EnterPlayersScreen.EnterPlayersView;
-import Iteratie14.View.MainScreen.MainScreenPresenter;
-import Iteratie14.View.MainScreen.MainScreenView;
 import javafx.event.*;
 import javafx.scene.control.Alert;
 import javafx.stage.WindowEvent;

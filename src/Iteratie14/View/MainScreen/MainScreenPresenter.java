@@ -8,7 +8,7 @@ import Iteratie14.View.HighscoresScreen.HighScorePresenter;
 import Iteratie14.View.HighscoresScreen.HighScoreView;
 import Iteratie14.View.InfoScreen.*;
 import Iteratie14.View.SettingsScreen.*;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 
 import javafx.event.*;
 import javafx.geometry.HPos;
@@ -118,7 +118,7 @@ public class MainScreenPresenter {
     private void updateAantalBeurten(){
         try {
             String aantalBeurtenBl = String.valueOf(model.getSpelers().getSpeler(Kleur.BLAUW).getAantalBeurten());
-            view.getGameBoardView().getAantalBeurtenBlauw().setText("Aantal beurten: " + aantalBeurtenBl);
+            view.getGameBoardView().getAantalBeurtenBlauw().setText("Beurten: " + aantalBeurtenBl);
         }
         catch (NullPointerException ne){
             // geen actie nodig
@@ -126,21 +126,21 @@ public class MainScreenPresenter {
 
         try {
             String aantalBeurtenRo = String.valueOf(model.getSpelers().getSpeler(Kleur.ROOD).getAantalBeurten());
-            view.getGameBoardView().getAantalBeurtenRood().setText("Aantal beurten: " + aantalBeurtenRo);
+            view.getGameBoardView().getAantalBeurtenRood().setText("Beurten: " + aantalBeurtenRo);
         }
         catch (NullPointerException ne){
             // geen actie nodig
         }
         try {
             String aantalBeurtenGr = String.valueOf(model.getSpelers().getSpeler(Kleur.GROEN).getAantalBeurten());
-            view.getGameBoardView().getAantalBeurtenGroen().setText("Aantal beurten: " + aantalBeurtenGr);
+            view.getGameBoardView().getAantalBeurtenGroen().setText("Beurten: " + aantalBeurtenGr);
         }
         catch (NullPointerException ne){
             // geen actie nodig
         }
         try {
             String aantalBeurtenGe = String.valueOf(model.getSpelers().getSpeler(Kleur.GEEL).getAantalBeurten());
-            view.getGameBoardView().getAantalBeurtenGeel().setText("Aantal beurten: " + aantalBeurtenGe);
+            view.getGameBoardView().getAantalBeurtenGeel().setText("Beurten: " + aantalBeurtenGe);
         }
         catch (NullPointerException ne){
             // geen actie nodig

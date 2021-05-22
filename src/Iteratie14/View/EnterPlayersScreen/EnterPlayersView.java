@@ -1,8 +1,7 @@
 package Iteratie14.View.EnterPlayersScreen;
 
-import Iteratie14.View.UISettings;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import Iteratie14.Model.Kleur;
+import Iteratie14.UISettings;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -308,7 +307,7 @@ public class EnterPlayersView extends GridPane {
         //   this.setGridLinesVisible(true);
     }
 
-    void enablePlayers(int aantal) {
+    public void enablePlayers(int aantal) {
         switch (aantal) {
             case 4:
                 player4.setDisable(false);
@@ -373,5 +372,21 @@ public class EnterPlayersView extends GridPane {
 
     public Button getConfirm() {
         return confirm;
+    }
+
+    public Label getPlayer1() {
+        return player1;
+    }
+
+    public Label getPlayer2() {
+        return player2;
+    }
+
+    public Label getPlayer3() {
+        return player3;
+    }
+
+    public Label getPlayer4() {
+        return player4;
     }
 }

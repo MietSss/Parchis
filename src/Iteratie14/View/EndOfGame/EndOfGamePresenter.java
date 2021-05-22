@@ -1,31 +1,14 @@
 package Iteratie14.View.EndOfGame;
 
-import Iteratie14.Model.HighScore;
-import Iteratie14.Model.ParchisException;
 import Iteratie14.Model.ParchisModel;
 import Iteratie14.View.EnterPlayersScreen.EnterPlayersPresenter;
 import Iteratie14.View.EnterPlayersScreen.EnterPlayersView;
-import Iteratie14.View.HighscoresScreen.HighScorePresenter;
-import Iteratie14.View.HighscoresScreen.HighScoreView;
-import Iteratie14.View.MainScreen.MainScreenPresenter;
-import Iteratie14.View.MainScreen.MainScreenView;
-import Iteratie14.View.StartScreen.StartScreenPresenter;
-import Iteratie14.View.StartScreen.StartScreenView;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.image.Image;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 
 import java.net.MalformedURLException;
-import java.nio.file.Files;
 
 public class EndOfGamePresenter {
     private ParchisModel model;

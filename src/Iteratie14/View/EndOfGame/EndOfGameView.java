@@ -1,6 +1,6 @@
 package Iteratie14.View.EndOfGame;
 
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

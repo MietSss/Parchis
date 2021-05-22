@@ -1,4 +1,4 @@
-package Iteratie14.View;
+package Iteratie14;
 
 import javafx.stage.Screen;
 

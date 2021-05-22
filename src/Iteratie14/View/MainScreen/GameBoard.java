@@ -2,11 +2,10 @@ package Iteratie14.View.MainScreen;
 
 
 import Iteratie14.Model.*;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -519,31 +518,35 @@ public class GameBoard extends GridPane {
                 naamSpeler.setPrefWidth(vakHoogte*4);
                 naamSpeler.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,
                         CornerRadii.EMPTY, new BorderWidths(3))));
+                aantalBeurtenGroen.setWrapText(true);
+                aantalBeurtenGeel.setWrapText(true);
+                aantalBeurtenBlauw.setWrapText(true);
+                aantalBeurtenRood.setWrapText(true);
                 Kleur kleurSpeler = kleurenSpelers.get(i);
                 switch (kleurSpeler) {
                     case BLAUW:
-                        this.add(naamSpeler, 7, 7, 2,1);
+                        this.add(naamSpeler, 5, 7, 3,1);
                         labelsNaamSpeler.put(Kleur.BLAUW, naamSpeler);
-                        this.add(gegooideWaardeSpelerBl, 1, 7);
-                        this.add(aantalBeurtenBlauw, 7,6 );
+                        this.add(gegooideWaardeSpelerBl, 1,7);
+                        this.add(aantalBeurtenBlauw, 7,5 ,2,1);
                         break;
                     case GEEL:
-                        this.add(naamSpeler, 13, 7, 2, 1);
+                        this.add(naamSpeler, 13, 7, 3, 1);
                         labelsNaamSpeler.put(Kleur.GEEL, naamSpeler);
                         this.add(gegooideWaardeSpelerGe, 19,7);
-                        this.add(aantalBeurtenGeel, 13,6);
+                        this.add(aantalBeurtenGeel, 13,5,2,1);
                         break;
                     case ROOD:
-                        this.add(naamSpeler, 7, 13, 2, 1);
+                        this.add(naamSpeler, 5, 13, 2, 1);
                         labelsNaamSpeler.put(Kleur.ROOD, naamSpeler);
                         this.add(gegooideWaardeSpelerRo, 1, 13);
-                        this.add(aantalBeurtenRood, 7,14);
+                        this.add(aantalBeurtenRood, 7,15,2,1);
                         break;
                     case GROEN:
-                        this.add(naamSpeler, 13, 13, 2 ,1);
+                        this.add(naamSpeler, 13, 13, 3 ,1);
                         labelsNaamSpeler.put(Kleur.GROEN, naamSpeler);
                         this.add(gegooideWaardeSpelerGr, 19,13);
-                        this.add(aantalBeurtenGroen,13,14 );
+                        this.add(aantalBeurtenGroen,13,15,2,1 );
                         break;
                 }
             }

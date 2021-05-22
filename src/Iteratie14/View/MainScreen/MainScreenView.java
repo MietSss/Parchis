@@ -1,11 +1,7 @@
 package Iteratie14.View.MainScreen;
 
 import Iteratie14.Model.*;
-import Iteratie14.View.UISettings;
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.PauseTransition;
-import javafx.animation.SequentialTransition;
+import Iteratie14.UISettings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -14,7 +10,6 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.util.Duration;
 
 import java.net.MalformedURLException;
 import java.nio.file.Files;

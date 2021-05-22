@@ -4,13 +4,14 @@ import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
 public class TextSizeTransition extends Transition {
 
     private Label label;
-    private final int END_FONT=80;
+    private final int END_FONT=60;
     private final int START_FONT=16;
     private final double DURATION_SECONDEN=1.0;
     private final int END=END_FONT-START_FONT;
@@ -27,6 +28,7 @@ public class TextSizeTransition extends Transition {
         int size=(int)((END*frac)-START_FONT);
         if(size<=END){
             label.setFont(Font.font(size));
+
         }
     }
 

@@ -1,7 +1,7 @@
 package Iteratie14.View.SettingsScreen;
 
 import Iteratie14.Model.*;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.event.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;

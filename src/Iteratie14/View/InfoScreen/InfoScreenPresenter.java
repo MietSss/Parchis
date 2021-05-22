@@ -2,7 +2,7 @@ package Iteratie14.View.InfoScreen;
 
 
 import Iteratie14.Model.ParchisModel;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

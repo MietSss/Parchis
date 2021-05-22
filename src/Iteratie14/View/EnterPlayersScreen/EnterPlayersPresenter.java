@@ -4,7 +4,7 @@ package Iteratie14.View.EnterPlayersScreen;
 import Iteratie14.Model.*;
 import Iteratie14.View.MainScreen.MainScreenPresenter;
 import Iteratie14.View.MainScreen.MainScreenView;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -83,7 +83,8 @@ public class EnterPlayersPresenter {
                     alert.setContentText("Er is geen kleur gekozen voor speler1");
                     alert.showAndWait();
                 }
-                updateView();
+                updateKleurenKeuze();
+                view.getColorPlayer1().setDisable(true);
             }
         });
 
@@ -98,7 +99,8 @@ public class EnterPlayersPresenter {
                     alert.setContentText("Er is geen kleur gekozen voor speler2");
                     alert.showAndWait();
                 }
-                updateView();
+                updateKleurenKeuze();
+                view.getColorPlayer2().setDisable(true);
             }
         });
         view.getColorPlayer3().setOnAction(new EventHandler<ActionEvent>() {
@@ -112,7 +114,8 @@ public class EnterPlayersPresenter {
                     alert.setContentText("Er is geen kleur gekozen voor speler3");
                     alert.showAndWait();
                 }
-                updateView();
+                updateKleurenKeuze();
+                view.getColorPlayer3().setDisable(true);
             }
         });
         view.getColorPlayer4().setOnAction(new EventHandler<ActionEvent>() {
@@ -126,7 +129,8 @@ public class EnterPlayersPresenter {
                     alert.setContentText("Er is geen kleur gekozen voor speler4");
                     alert.showAndWait();
                 }
-                updateView();
+                updateKleurenKeuze();
+                view.getColorPlayer1().setDisable(true);
             }
         });
 
@@ -199,7 +203,7 @@ public class EnterPlayersPresenter {
     }
 
 
-    private void updateView() {
+    private void  updateView() {
         model.getSpelers().setAantalSpelers(aantalSpelers);
         view.enablePlayers(aantalSpelers);
         ObservableList<String> availableColors = FXCollections.observableArrayList(getBeschikbareKleuren());
@@ -207,6 +211,7 @@ public class EnterPlayersPresenter {
             case 4:
                 if (view.getColorPlayer4().getValue() == null) {
                     view.getColorPlayer4().setItems(availableColors);
+
                 }
             case 3:
                 if (view.getColorPlayer3().getValue() == null) {
@@ -222,6 +227,30 @@ public class EnterPlayersPresenter {
 
         }
 
+    }
+
+    private void updateKleurenKeuze(){
+        model.getSpelers().setAantalSpelers(aantalSpelers);
+        ObservableList<String> availableColors = FXCollections.observableArrayList(getBeschikbareKleuren());
+        switch (aantalSpelers) {
+            case 4:
+                if (view.getColorPlayer4().getValue() == null) {
+                    view.getColorPlayer4().setItems(availableColors);
+
+                }
+            case 3:
+                if (view.getColorPlayer3().getValue() == null) {
+                    view.getColorPlayer3().setItems(availableColors);
+                }
+            case 2:
+                if (view.getColorPlayer2().getValue() == null) {
+                    view.getColorPlayer2().setItems(availableColors);
+                }
+                if (view.getColorPlayer1().getValue() == null) {
+                    view.getColorPlayer1().setItems(availableColors);
+                }
+
+        }
     }
 
     private void addWindowEventHandlers(){
@@ -245,6 +274,7 @@ public class EnterPlayersPresenter {
             view.getScene().getWindow().hide();
         }
     }
+
 
 
     public List<String> getBeschikbareKleuren() {

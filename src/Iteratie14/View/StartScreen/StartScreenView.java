@@ -1,6 +1,6 @@
 package Iteratie14.View.StartScreen;
 
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;

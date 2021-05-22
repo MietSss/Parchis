@@ -2,7 +2,7 @@ package Iteratie14.View.AboutScreen;
 
 import java.net.MalformedURLException;
 import java.nio.file.Files;
-import Iteratie14.View.UISettings;
+import Iteratie14.UISettings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
